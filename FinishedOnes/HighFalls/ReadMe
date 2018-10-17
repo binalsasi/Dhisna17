@@ -1,0 +1,16 @@
+
+	HighFalls is an exercise to train to use stacks to solve complicated problem.
+	There are N person standing in a row. Each one has different heights. But these people are envious of people higher than them
+	standing at their right. If a person A who stands to the right of a person B, if A is higher than B then A dies (police investigations 
+	are of no use). In each day, if any person is higher than his left neighbour, he dies.
+	People of Same heights live though. Also even though a person has died, the body remains until the end of the day.
+
+ 	If given N heights, calculate and print the number of days until an equilibrium is reached. That is no person dies anymore.
+
+	for example:
+	consider 8 persons, of heights	3 1 10 7 3 5 6 6
+	after first day 10 has died, so has 5 and his immediate neighbour 6.
+	remaining = 3 1 7 3 6
+	after day 2 it is : 3 1 3
+	after day 3 it is : 3 1
+	after day 4, no more deaths. So number of days until peace is 3.

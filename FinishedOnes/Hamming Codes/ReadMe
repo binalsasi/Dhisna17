@@ -1,0 +1,41 @@
+	Hamming Codes
+	Hamming codes are code words which are created from a message block following some rules. The best feature of hamming codes is that
+	it can correct single bit errors. In a nutshell, what a hamming encoder does is that it inserts multiple parity bits into the 
+	message bit code. The value of each of these parities depends on the bit in the final transmitted code.
+
+	The algorithm first gets the message block(M) (bits) to be encoded. [say 1 0 1 0 1 1 0 0 1 0 1 1 1 0] 
+	Then it calculates the number of parity bits required (r) as : m + r + 1 > 2 raised to r
+		where m is the number of bits in M [m = 14; r => 5]
+	Then it places the bits in M to T in places which are not powers of 2, in the same order!
+		[T = _ _ 1 _ 0 1 0 _ 1 1 0 0 1 0 1 _ 1 1 0]
+	Parities are calculated using the following rule :
+		the position of each bit in T can be expressed in terms of powers of 2;
+		eg : the 3rd bit == 1 (count starts from left) has the position : 2 + 1
+		     the 5th bit == 0 has position : 4 + 1
+		A Parity Pi is the XOR of all those bits, whose position has i in its sum;  i : 1, 2, 4, 8, 16 ...
+		eg : P1 = XOR of the bits (3, 5, 7, 9, 11, 13, 15, 17, 19) == 1;
+		similarly P2 = 1;
+		P16 = XOR of bits (17, 18, 19);
+	These parity bits are then inserted in their appropriate places to generate a hamming code for the message!
+	Note : length of T = m + r
+
+	sample :
+	M = 10101100101110
+	T = 1111010011001010110
+
+	Parities were 1, 1, 1, 0, 0
+
+	sample2 :
+	M = 0101101011
+	T = 11001010101011
+
+	PART2
+	On the receiver side, if the message bit stream experienced some error that altered a bit, from 0 to 1 or vice versa; Hamming can find it!
+	The procedures for detection are :
+	1. regenerate a new set of parities, as before
+	2. compare the existing parities (in the received message). if both are not the same, something is up!
+
+	Position of the bit can be obtained by adding the positional values of the parity bits that don't match up.
+	for example: if T2 = 11111011001010110,  where 5th bit of T was corrupted then
+		the parities P1 and P4 will be different from that was received. And the location of error = 1 + 4 == 5; !!
+	Note : length of T2 = n == m + r

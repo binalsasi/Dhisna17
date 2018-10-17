@@ -1,0 +1,17 @@
+crc1
+Enter Generator Code In Binary : 101011
+Enter Message Code In Binary : 110110100100
+CodeWord Bis : 11011010010010010
+
+Enter Generator Code In Binary : 1011
+Enter Message Code In Binary : 100100
+CodeWord Bis : 100100101
+
+Enter Generator Code In Binary : 10011
+Enter Message Code In Binary : 1001110011
+CodeWord Bis : 10011100110000
+
+Enter Generator Code In Binary : 101001011
+Enter Message Code In Binary : 100111000111
+CodeWord Bis : 10011100011100010111
+

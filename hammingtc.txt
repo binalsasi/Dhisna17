@@ -1,0 +1,11 @@
+Enter Message Code In Binary : 1001001100
+Hamming Code Produced :  11100010001100
+
+Enter Message Code In Binary : 10101010
+Hamming Code Produced :  111101001010
+
+Enter Message Code In Binary : 100100100100
+Hamming Code Produced :  10100010001001000
+
+Enter Message Code In Binary : 11001100100
+Hamming Code Produced :  1010011100100
